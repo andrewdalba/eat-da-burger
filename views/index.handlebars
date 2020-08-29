@@ -1,32 +1,33 @@
 <h1 class="jumbotron jumbotron-fluid" id="heading">Burgers!</h1>
-<div class="container" id="burgerLists">
-  <div class="row mx-md-n5">
-    <div id="leftSection" class="col-sm-12 col-md-6 px-md-5">
-      <h2>Burgers that have not been eaten</h2>
+<main>
+  <div class="container" id="burgerLists">
+    <div class="row mx-md-n5">
+      <div id="leftSection" class="col-sm-12 col-md-6 px-md-5">
+        <h2>Burgers that have not been eaten</h2>
 
-      <ul>
-        {{#each burgers}}
-        {{#unless sleepy}}
-        {{> burgers/burger-block sleep=true}}
-        {{/unless}}
-        {{/each}}
-      </ul>
+        <ul>
+          {{#each burgers}}
+          {{#unless sleepy}}
+          {{> burgers/burger-block sleep=true}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+
+      <div id="rightSection" class="col-sm-12 col-md-6 px-md-5">
+        <h2>Burgers that have been eaten</h2>
+
+        <ul>
+          {{#each burgers}}
+          {{#if sleepy}}
+          {{> burgers/burger-block sleep=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
     </div>
 
-    <div id="rightSection" class="col-sm-12 col-md-6 px-md-5">
-      <h2>Burgers that have been eaten</h2>
-
-      <ul>
-        {{#each burgers}}
-        {{#if sleepy}}
-        {{> burgers/burger-block sleep=false}}
-        {{/if}}
-        {{/each}}
-      </ul>
-    </div>
   </div>
-
-  </div>  
   <div class="container-fluid" id="addBurger">
     <h2>Add a burger</h2>
     <form class="create-form">
@@ -45,3 +46,4 @@
       <button type="submit">Add burger</button>
     </form>
   </div>
+</main>

@@ -10,3 +10,4 @@ CREATE TABLE burgers
 	sleepy BOOLEAN DEFAULT false,
 	PRIMARY KEY (id)
 );
+ 
