@@ -1,33 +1,5 @@
 <h1 class="jumbotron jumbotron-fluid" id="heading">Burgers!</h1>
 <main>
-  <div class="container" id="burgerLists">
-    <div class="row mx-md-n5">
-      <div id="leftSection" class="col-sm-12 col-md-6 px-md-5">
-        <h2>Burgers that have not been eaten</h2>
-
-        <ul>
-          {{#each burgers}}
-          {{#unless eaten}}
-          {{> burgers/burger-block eaten=true}}
-          {{/unless}}
-          {{/each}}
-        </ul>
-      </div>
-
-      <div id="rightSection" class="col-sm-12 col-md-6 px-md-5">
-        <h2>Burgers that have been eaten</h2>
-
-        <ul>
-          {{#each burgers}}
-          {{#if eaten}}
-          {{> burgers/burger-block eaten=false}}
-          {{/if}}
-          {{/each}}
-        </ul>
-      </div>
-    </div>
-
-  </div>
   <div class="container-fluid" id="addBurger">
     <h2>Add a burger</h2>
     <form class="create-form">
@@ -38,12 +10,41 @@
       </div>
 
       <div class="form-group">
-        <label for="eaten">eaten?</label><br>
-        <input type="radio" name="eaten" value="1" checked> eaten!<br>
-        <input type="radio" name="eaten" value="0"> Not eaten!
+        <label for="eaten">Hungry now?</label><br>
+        <input type="radio" name="eaten" value="0" checked> Ready to eat now!<br>
+        <input type="radio" name="eaten" value="1"> Eat this later!
       </div>
 
       <button type="submit">Add burger</button>
     </form>
   </div>
+  <div class="container" id="burgerLists">
+    <div class="row mx-md-n5">
+      <div id="leftSection" class="col-sm-12 col-md-6 px-md-5">
+        <h2>Burgers that have not been eaten</h2>
+
+        <ul>
+          {{#each burgers}}
+          {{#if eaten}}
+          {{> burgers/burger-block eaten=true}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+
+      <div id="rightSection" class="col-sm-12 col-md-6 px-md-5">
+        <h2>Burgers that have been eaten</h2>
+
+        <ul>
+          {{#each burgers}}
+          {{#unless eaten}}
+          {{> burgers/burger-block eaten=false}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  
 </main>

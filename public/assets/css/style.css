@@ -23,7 +23,7 @@ li {
 }
 
 #burgerLists{
-  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 #addBurger{
@@ -69,4 +69,5 @@ li {
 
 h1{
   color: #ffffff; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
