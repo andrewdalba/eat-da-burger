@@ -17,15 +17,6 @@ router.get("/", function(req, res) {
   });
 });
 
-// router.get("/", (req, res) => {
-//   burger.all()
-//   .then(data => {
-//     res.render("index", {
-//       burgers: data
-//     });
-//   });
-// });
-
 router.post("/api/burgers", function(req, res) {
   burger.create([
     "burger_name", "eaten"
