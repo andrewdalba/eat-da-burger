@@ -2,7 +2,7 @@
 $(function() {
   $(".change-eaten").on("click", function(event) {
     var id = $(this).data("id");
-    var newEaten = $(this).data("newEaten");
+    var newEaten = $(this).data("neweaten");
 
     var newEatenState = {
       eaten: newEaten
@@ -25,15 +25,15 @@ $(function() {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newburger = {
-      name: $("#ca").val().trim(),
+    var newBurger = {
+      burger_name: $("#ca").val().trim(),
       eaten: $("[name=eaten]:checked").val().trim()
     };
 
     // Send the POST request.
     $.ajax("/api/burgers", {
       type: "POST",
-      data: newburger
+      data: newBurger
     }).then(
       function() {
         console.log("created new burger");

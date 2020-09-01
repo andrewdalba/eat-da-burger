@@ -1,9 +1,9 @@
-var express = require("express");
+const express = require("express");
 
-var router = express.Router();
+const router = express.Router();
 
 // Import the model (burger.js) to use its database functions.
-var burger = require("../models/burger.js");
+const burger = require("../models/burger.js");
 const { Console } = require("console");
 
 // Create all our routes and set up logic within those routes where required.
@@ -17,11 +17,20 @@ router.get("/", function(req, res) {
   });
 });
 
+// router.get("/", (req, res) => {
+//   burger.all()
+//   .then(data => {
+//     res.render("index", {
+//       burgers: data
+//     });
+//   });
+// });
+
 router.post("/api/burgers", function(req, res) {
   burger.create([
-    "name", "eaten"
+    "burger_name", "eaten"
   ], [
-    req.body.name, req.body.eaten
+    req.body.burger_name, req.body.eaten
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
