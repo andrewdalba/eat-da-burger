@@ -30,3 +30,6 @@ andrewdalba@gmail.com
 
 ## Deployed site link
 https://gentle-mesa-82550.herokuapp.com/ 
+
+## Screenshot of Deployed Application
+![screenshot](./public/assets/burger_app_screenshot.PNG)
